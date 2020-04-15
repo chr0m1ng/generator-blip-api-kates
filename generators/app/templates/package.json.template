@@ -1,32 +1,38 @@
 {
-  "name": "<%= project%>",
-  "version": "1.0.0",
-  "description": "<%= description%>",
-  "author": "<%= name%> <<%=email%>>",
-  "homepage": "https://github.com/<%= username%>/<%= project%>#readme",
-  "keywords": [
-    "node"
-  ],
-  "main": "main.js",
-  "files": [
-    "src"
-  ],
-  "scripts": {
-    "coverage": "jest --colors --coverage",
-    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
-    "jest": "jest --colors --verbose",
-    "lint": "eslint 'src/**/*.js' 'test/**/*.js'",
-    "start": "node main.js",
-    "test": "npm run lint && npm run jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/<%= username%>/<%= project%>.git"
-  },
-  "bugs": {
-    "url": "https://github.com/<%= username%>/<%= project%>/issues"
-  },
-  "dependencies": {},
-  "devDependencies": {},
-  "license": "MIT"
+    "name": "<%= project%>",
+    "version": "1.0.0",
+    "description": "<%= description%>",
+    "author": "<%= name%> <<%=email%>>",
+    "homepage": "https://github.com/<%= username%>/<%= project%>#readme",
+    "keywords": [
+        "node"
+    ],
+    "main": "src/server.js",
+    "files": [
+        "src"
+    ],
+    "scripts": {
+        "jest": "jest --colors --verbose",
+        "lint": "eslint 'src/**/*.js' 'test/**/*.js'",
+        "start": "node src/server.js",
+        "test": "npm run lint && npm run jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/<%= username%>/<%= project%>.git"
+    },
+    "bugs": {
+        "url": "https://github.com/<%= username%>/<%= project%>/issues"
+    },
+    "dependencies": {
+        "blip-sdk": "8.0.0",
+        "express": "4.17.1",
+        "http-status-codes": "1.4.0",
+        "lime-transport-websocket": "2.0.3",
+        "swagger-jsdoc": "4.0.0",
+        "swagger-ui-express": "4.1.4",
+        "uuid": "7.0.3"
+    },
+    "devDependencies": {},
+    "license": "MIT"
 }

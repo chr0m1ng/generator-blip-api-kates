@@ -1,0 +1,57 @@
+# Default values for <%= project %>.
+# Declare variables to be passed into your templates.
+fullnameOverride: <%= project %>
+replicaCount: 1
+image:
+    repository: <%= project %>
+    tag: #{Build.BuildId}#
+    pullPolicy: IfNotPresent
+    imagePullSecretName: acr-takeprivate-secret
+imagePullSecrets: []
+service:
+    type: ClusterIP
+    port: 80
+
+probes:
+    enabled: false
+
+ingress:
+    enabled: true
+    whitelist:
+        ranges:
+    annotations:
+        kubernetes.io/ingress.class: nginx
+        nginx.ingress.kubernetes.io/proxy-body-size: '0'
+    hostName: hostName
+    tls:
+        secretName: secretName
+secrets: {}
+resources:
+    limits:
+        cpu: cpuLimit
+        memory: memoryLimit
+    requests:
+        cpu: cpuRequests
+        memory: memoryRequests
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+environment:
+    stage: staging
+
+appSettings:
+    configMap: <%= project %>
+    path: /app/appsettings.json
+    subPath: appsettings.json
+
+autoscale:
+    minReplicas: minReplicas
+    maxReplicas: maxReplicas
+    averageCPUUtilization: averageCpuUtilization
+
+team: zeus
+
+annotations: {}
