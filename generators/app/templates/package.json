@@ -1,9 +1,9 @@
 {
-    "name": "<%= project%>",
+    "name": "api-teste",
     "version": "1.0.0",
     "description": "<%= description%>",
     "author": "<%= name%> <<%=email%>>",
-    "homepage": "https://github.com/<%= username%>/<%= project%>#readme",
+    "homepage": "https://github.com/<%= username%>/api-teste#readme",
     "keywords": [
         "node"
     ],
@@ -19,10 +19,10 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/<%= username%>/<%= project%>.git"
+        "url": "https://github.com/<%= username%>/api-teste.git"
     },
     "bugs": {
-        "url": "https://github.com/<%= username%>/<%= project%>/issues"
+        "url": "https://github.com/<%= username%>/api-teste/issues"
     },
     "dependencies": {
         "blip-sdk": "8.0.0",
@@ -31,7 +31,8 @@
         "lime-transport-websocket": "2.0.3",
         "swagger-jsdoc": "4.0.0",
         "swagger-ui-express": "4.1.4",
-        "uuid": "7.0.3"
+        "uuid": "7.0.3",
+        "yup": "^0.28.3"
     },
     "devDependencies": {},
     "license": "MIT"

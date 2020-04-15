@@ -5,6 +5,7 @@ const express = require('express');
 const package_info = require('../package.json');
 const router = require('./controllers');
 const BlipClientProvider = require('./providers/blip');
+const errorMiddleware = require('./middlewares/error-middleware');
 
 const SWAGGER_API_PATH = '/';
 const BASE_API_PATH = '/api/v1';
@@ -18,8 +19,9 @@ const App = class {
     }
 
     async build() {
+        this.setupPreRoutesMiddlewares();
         this.setupRoutes();
-        this.setupMiddlewares();
+        this.setupPosRoutesMiddlewares();
         await this.setupBlipClient();
     }
 
@@ -29,8 +31,12 @@ const App = class {
         });
     }
 
-    setupMiddlewares() {
+    setupPreRoutesMiddlewares() {
         this.server.use(express.json());
+    }
+
+    setupPosRoutesMiddlewares() {
+        this.server.use(errorMiddleware);
         this.setupSwagger();
     }
 
@@ -55,7 +61,7 @@ const App = class {
     }
 
     setupRoutes() {
-        this.server.use(router);
+        this.server.use(BASE_API_PATH, router);
     }
 
     async setupBlipClient() {

@@ -24,12 +24,17 @@ router.get('/', (_, res) => {
 
 /**
  *  @swagger
- * /example/:id:
+ * /example/{id}:
  *   get:
  *     tags:
  *     - "example"
  *     summary: "Get an example"
  *     description: "Filter all examples and return an example with the given id"
+ *     parameters:
+ *     - in: "path"
+ *       name: "id"
+ *       description: "The id to lookup"
+ *       required: true
  *     responses:
  *       200:
  *         description: "Ok"
@@ -62,7 +67,7 @@ router.get('/:id', (req, res) => {
  *         type: "object"
  *         properties:
  *           id:
- *              type: "int"
+ *              type: "integer"
  *           name:
  *              type: "string"
  *           email:

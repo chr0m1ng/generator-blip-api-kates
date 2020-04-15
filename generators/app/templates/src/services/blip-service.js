@@ -1,4 +1,4 @@
-const guid = require('uuid/v4');
+const { v4 } = require('uuid');
 const { GET } = require('../constants/blip/command-methods');
 const BlipClientProvider = require('../providers/blip');
 
@@ -8,7 +8,7 @@ const CLIENT_PROVIDER = new BlipClientProvider();
 const ping = async () => {
     const bot_client = await CLIENT_PROVIDER.getClient();
     const ping_command = {
-        id: guid(),
+        id: v4(),
         method: GET,
         uri: PING_URI
     };

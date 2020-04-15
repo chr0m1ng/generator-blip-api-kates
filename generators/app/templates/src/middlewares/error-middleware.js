@@ -5,18 +5,17 @@ const handleError = (err) => {
         return err;
     }
     return {
-        status: INTERNAL_SERVER_ERROR,
-        body: err.message
+        ...err,
+        status: INTERNAL_SERVER_ERROR
     };
 };
 
-const encapsuleReq = (_, res, next) => {
-    try {
-        return next();
-    } catch (err) {
-        const error_res = handleError(err);
-        return res.status(error_res.status).send(error_res.body);
+const encapsuleReq = (err, _, res, next) => {
+    if (res.headersSent) {
+        return next(err);
     }
+    const error_res = handleError(err);
+    return res.status(error_res.status).send(error_res.message);
 };
 
 module.exports = encapsuleReq;

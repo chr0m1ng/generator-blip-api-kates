@@ -15,7 +15,7 @@ const BlipClientProvider = class {
     async _setupClient() {
         const client = new blip_sdk.ClientBuilder()
             .withIdentifier(config.bot.identifier)
-            .withAccessKey(config.bot.accessKey)
+            .withAccessKey(config.bot.access_key)
             .withRoutingRule('instance')
             .withInstance(config.bot.identifier)
             .withTransportFactory(() => new Websocket_transport())
