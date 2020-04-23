@@ -85,15 +85,21 @@ Whatever name you choose will replace all occurrences of that string in the proj
 |__⚙️README.md
 ```
 
-## Installation
+## Usage
 
-- Single command
+### Generate without install Yeoman
 
 ```bash
+# Create a directory for your project && Change into directory
+$ take my-api-name
+# Or
+$ mkdir my-api-name && cd my-api-name
+
+# Generate a project
 $ npm init yo generator-blip-api-kates
 ```
 
-#### Or
+### Generate installing Yeoman
 
 -   Install Yeoman
 
@@ -107,16 +113,13 @@ $ npm install -g yo
 $ npm install -g generator-blip-api-kates
 ```
 
-## Usage
-
 -   Creating a project
 
 ```bash
-# Create a directory for your project
-$ mkdir my-api-name
-
-# Change into directory
-$ cd my-api-name
+# Create a directory for your project && Change into directory
+$ take my-api-name
+# Or
+$ mkdir my-api-name && cd my-api-name
 
 # Generate a project
 $ yo blip-api-kates
