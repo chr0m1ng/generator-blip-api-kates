@@ -87,6 +87,14 @@ Whatever name you choose will replace all occurrences of that string in the proj
 
 ## Installation
 
+- Single command
+
+```bash
+$ npm init yo generator-blip-api-kates
+```
+
+#### Or
+
 -   Install Yeoman
 
 ```bash
