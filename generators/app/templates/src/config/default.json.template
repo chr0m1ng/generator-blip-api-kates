@@ -1,0 +1,14 @@
+{
+    "bot": {
+        "identifier": "BOT ID",
+        "access_key": "BOT ACCESS KEY"
+    },
+    "seq": {
+        "server_url": "SEQ URL",
+        "api_key": "SEQ API KEY"
+    },
+    "api": {
+        "base_path": "/api/v1",
+        "swagger_path": "/"
+    }
+}

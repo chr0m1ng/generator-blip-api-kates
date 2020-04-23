@@ -2,16 +2,25 @@
 const swagger_ui = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
 const express = require('express');
-const package_info = require('../package.json');
-const router = require('./controllers');
-const BlipClientProvider = require('./providers/blip');
-const errorMiddleware = require('./middlewares/error-middleware');
 
-const SWAGGER_API_PATH = '/';
-const BASE_API_PATH = '/api/v1';
-const CONTROLLERS_PATH = './src/controllers/*.js';
+const package_info = require('../package.json');
+const config = require('./config');
+const router = require('./routes');
+const BlipClientProvider = require('./providers/blip-provider');
+const LoggerProvider = require('./providers/logger-provider');
+const resBodyMiddleware = require('./middlewares/res-body-middleware');
+const errorMiddleware = require('./middlewares/error-middleware');
+const validatorMiddleware = require('./middlewares/validator-middleware');
+const {
+    requestLogger,
+    responseLogger,
+    shouldNotLogPath
+} = require('./middlewares/logger-middleware');
+
+const ROUTES_PATH = './src/routes/*.js';
 const DEFAULT_PORT = 3333;
 const PORT = process.env.PORT || DEFAULT_PORT;
+const ETAG = 'etag';
 
 const App = class {
     constructor() {
@@ -19,6 +28,7 @@ const App = class {
     }
 
     async build() {
+        this.setupLogger();
         this.setupPreRoutesMiddlewares();
         this.setupRoutes();
         this.setupPosRoutesMiddlewares();
@@ -27,17 +37,22 @@ const App = class {
 
     start() {
         this.server.listen(PORT, () => {
-            console.log(`server listening on port: ${PORT}`);
+            this.logger.info(`server listening on port: ${PORT}`);
         });
     }
 
     setupPreRoutesMiddlewares() {
+        this.server.disable(ETAG);
         this.server.use(express.json());
+        this.server.use(resBodyMiddleware);
+        this.server.use(requestLogger.unless(shouldNotLogPath));
+        this.server.use(responseLogger.unless(shouldNotLogPath));
+        this.server.use(validatorMiddleware);
     }
 
     setupPosRoutesMiddlewares() {
-        this.server.use(errorMiddleware);
         this.setupSwagger();
+        this.server.use(errorMiddleware);
     }
 
     setupSwagger() {
@@ -48,20 +63,25 @@ const App = class {
                     version: package_info.version,
                     description: package_info.description
                 },
-                basePath: BASE_API_PATH
+                basePath: config.api.base_path
             },
-            apis: [CONTROLLERS_PATH]
+            apis: [ROUTES_PATH]
         };
         const specs = swaggerJsDoc(options);
         this.server.use(
-            SWAGGER_API_PATH,
+            config.api.swagger_path,
             swagger_ui.serve,
             swagger_ui.setup(specs)
         );
     }
 
     setupRoutes() {
-        this.server.use(BASE_API_PATH, router);
+        this.server.use(config.api.base_path, router);
+    }
+
+    setupLogger() {
+        this.logger_provider = new LoggerProvider();
+        this.logger = this.logger_provider.getLogger();
     }
 
     async setupBlipClient() {

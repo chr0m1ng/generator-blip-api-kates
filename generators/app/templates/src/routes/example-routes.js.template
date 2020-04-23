@@ -1,8 +1,9 @@
-const { Router } = require('express');
-const httpStatusCodes = require('http-status-codes');
-const example_facade = require('../facades/example-facade');
+const { constants } = require('http2');
+const Route = require('../models/route');
+const exampleController = require('../controllers/example-controller');
+const { add_example_body_schema } = require('../validators/example-validators');
 
-const router = Router();
+const routes = [];
 
 /**
  *  @swagger
@@ -15,13 +16,10 @@ const router = Router();
  *     responses:
  *       200:
  *         description: "Ok"
- *       500:
- *         description: "Ops... something wrong happened"
  */
-router.get('/', (_, res) => {
-    return res.send(example_facade.getAll());
-});
-
+routes.push(
+    new Route('/example', constants.HTTP2_METHOD_GET, exampleController.getAll)
+);
 /**
  *  @swagger
  * /example/{id}:
@@ -42,14 +40,10 @@ router.get('/', (_, res) => {
  *         description: "Example not found"
  *       400:
  *         description: "Bad Request"
- *       500:
- *         description: "Ops... something wrong happened"
  */
-router.get('/:id', (req, res) => {
-    const { id } = req.params;
-    return res.send(example_facade.get(id));
-});
-
+routes.push(
+    new Route('/example/:id', constants.HTTP2_METHOD_GET, exampleController.get)
+);
 /**
  *  @swagger
  * /example:
@@ -77,13 +71,14 @@ router.get('/:id', (req, res) => {
  *         description: "Example added Successfully"
  *       400:
  *         description: "Bad request"
- *       500:
- *         description: "Ops... something wrong happened"
  */
-router.post('/', (req, res) => {
-    const example = req.body;
-    example_facade.addExample(example);
-    return res.sendStatus(httpStatusCodes.CREATED);
-});
+routes.push(
+    new Route(
+        '/example',
+        constants.HTTP2_METHOD_POST,
+        exampleController.addExample,
+        { body: add_example_body_schema }
+    )
+);
 
-module.exports = router;
+module.exports = routes;

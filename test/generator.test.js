@@ -5,24 +5,25 @@ import path from 'path';
 import files from '../generators/app/files';
 
 describe('Generator Tests', () => {
-  beforeAll((done) => {
-    test
-      .run(path.join(__dirname, '../generators/app'))
-      .withPrompts({
-        project: 'awesome-project',
-        description: 'An awesome project',
-        name: 'Roberto Achar',
-        email: 'robertoachar@gmail.com',
-        username: 'robertoachar'
-      })
-      .on('end', done);
-  });
-
-  it('should create a project', (done) => {
-    files.forEach((file) => {
-      assert.file(file.destination);
+    const prompts = {
+        project: 'blip-bot-project',
+        description: 'Blip bot api project',
+        name: 'Gabriel Santos',
+        email: 'gabrielrsantoss@icloud.com'
+    };
+    beforeAll((done) => {
+        test.run(path.join(__dirname, '../generators/app'))
+            .withPrompts(prompts)
+            .on('end', done);
     });
 
-    done();
-  });
+    it('should create a project', (done) => {
+        files.forEach((file) => {
+            assert.file(
+                file.destination.replace('<%= project %>', prompts.project)
+            );
+        });
+
+        done();
+    });
 });

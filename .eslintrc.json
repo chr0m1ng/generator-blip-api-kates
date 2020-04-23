@@ -8,7 +8,8 @@
         "indent": ["error", 4, { "SwitchCase": 2 }],
         "no-console": "off",
         "camelcase": "off",
-        "eqeqeq": "off",
-        "class-methods-use-this": "off"
+        "class-methods-use-this": "off",
+        "radix": "off",
+        "consistent-return": "off"
     }
 }

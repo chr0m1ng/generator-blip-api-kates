@@ -15,6 +15,7 @@ const getExample = () => EXAMPLES;
 
 const addExample = (example) => {
     EXAMPLES.push(example);
+    return example;
 };
 
 module.exports = { getExample, addExample };

@@ -1,6 +1,6 @@
 const { v4 } = require('uuid');
 const { GET } = require('../constants/blip/command-methods');
-const BlipClientProvider = require('../providers/blip');
+const BlipClientProvider = require('../providers/blip-provider');
 
 const PING_URI = '/ping';
 const CLIENT_PROVIDER = new BlipClientProvider();

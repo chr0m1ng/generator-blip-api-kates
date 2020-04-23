@@ -5,22 +5,22 @@ const getAll = () => example_service.getExample();
 
 const get = (id) => {
     const all_examples = getAll();
-    const filtered_examples = all_examples.filter((e) => e.id == id);
-    if (filtered_examples.length > 0) {
-        return filtered_examples[0];
+    const example = all_examples.find((e) => e.id === id);
+    if (example) {
+        return example;
     }
     throw new NoContentError(`get example with id ${id}`);
 };
 
 const addExample = (example) => {
     const all_examples = getAll();
-    const filtered_examples = all_examples.filter((e) => e.id == example.id);
-    if (filtered_examples.length > 0) {
+    const found_example = all_examples.find((e) => e.id === example.id);
+    if (found_example) {
         throw new BadRequestError(
             `example with id ${example.id} already exists`
         );
     }
-    example_service.addExample(example);
+    return example_service.addExample(example);
 };
 
 module.exports = { getAll, get, addExample };

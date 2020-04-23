@@ -1,9 +1,9 @@
 import Generator from 'yeoman-generator';
 
 import files from './files';
-import { validateEmail, validateName, validateUsername } from './validate';
+import { validateEmail, validateName } from './validate';
 
-class OSSGenerator extends Generator {
+class BlipApiGenerator extends Generator {
     initializing() {
         this.log('Blip Api Kates Generator');
         this.log(
@@ -26,7 +26,7 @@ class OSSGenerator extends Generator {
                 type: 'input',
                 name: 'description',
                 message: 'What is the description of your project?',
-                default: 'An awesome project'
+                default: 'An BLiP bot api project'
             },
             {
                 type: 'input',
@@ -40,13 +40,6 @@ class OSSGenerator extends Generator {
                 name: 'email',
                 message: 'What is your email?',
                 validate: validateEmail,
-                store: true
-            },
-            {
-                type: 'input',
-                name: 'username',
-                message: 'What is your GitHub username?',
-                validate: validateUsername,
                 store: true
             }
         ];
@@ -62,22 +55,19 @@ class OSSGenerator extends Generator {
         this.log('🚀  Generating project...');
         this.log();
 
-        const { project, description, name, email, username } = this.props;
+        const { project, description, name, email } = this.props;
         const templates = {
             project,
             description,
             name,
             email,
-            username,
             year: new Date().getFullYear()
         };
 
         files.forEach((file) => {
             this.fs.copyTpl(
                 this.templatePath(file.template),
-                this.destinationPath(
-                    file.destination.replace('{project}', project)
-                ),
+                this.destinationPath(file.destination),
                 templates
             );
         });
@@ -102,7 +92,20 @@ class OSSGenerator extends Generator {
         this.log('...installing dependencies...');
         this.log();
 
-        this.npmInstall(['express', 'swagger-jsdoc', 'swagger-ui-express']);
+        this.npmInstall([
+            'blip-sdk',
+            'bunyan',
+            'bunyan-seq',
+            'express',
+            'express-mung',
+            'express-unless',
+            'http-status-codes',
+            'lime-transport-websocket',
+            'swagger-jsdoc',
+            'swagger-ui-express',
+            'uuid',
+            'yup'
+        ]);
     }
 
     end() {
@@ -111,4 +114,4 @@ class OSSGenerator extends Generator {
     }
 }
 
-export default OSSGenerator;
+export default BlipApiGenerator;

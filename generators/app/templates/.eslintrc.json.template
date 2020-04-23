@@ -6,7 +6,10 @@
     },
     "rules": {
         "indent": ["error", 4, { "SwitchCase": 2 }],
-        "no-console": 0,
-        "camelcase": "off"
+        "no-console": "off",
+        "camelcase": "off",
+        "class-methods-use-this": "off",
+        "radix": "off",
+        "consistent-return": "off"
     }
 }

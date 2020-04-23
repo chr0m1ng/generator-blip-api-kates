@@ -1,9 +1,8 @@
 {
-    "name": "api-teste",
+    "name": "<%= project %>",
     "version": "1.0.0",
     "description": "<%= description%>",
     "author": "<%= name%> <<%=email%>>",
-    "homepage": "https://github.com/<%= username%>/api-teste#readme",
     "keywords": [
         "node"
     ],
@@ -13,20 +12,18 @@
     ],
     "scripts": {
         "jest": "jest --colors --verbose",
+        "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
         "lint": "eslint 'src/**/*.js' 'test/**/*.js'",
         "start": "node src/server.js",
         "test": "npm run lint && npm run jest"
     },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/<%= username%>/api-teste.git"
-    },
-    "bugs": {
-        "url": "https://github.com/<%= username%>/api-teste/issues"
-    },
     "dependencies": {
         "blip-sdk": "8.0.0",
+        "bunyan": "^1.8.12",
+        "bunyan-seq": "^0.4.0",
         "express": "4.17.1",
+        "express-mung": "^0.5.1",
+        "express-unless": "^0.5.0",
         "http-status-codes": "1.4.0",
         "lime-transport-websocket": "2.0.3",
         "swagger-jsdoc": "4.0.0",
@@ -34,6 +31,19 @@
         "uuid": "7.0.3",
         "yup": "^0.28.3"
     },
-    "devDependencies": {},
+    "devDependencies": {
+        "@babel/preset-env": "7.4.4",
+        "@types/jest": "24.0.12",
+        "@types/yeoman-generator": "3.1.2",
+        "coveralls": "3.0.3",
+        "eslint": "5.16.0",
+        "eslint-config-airbnb": "^18.1.0",
+        "eslint-config-airbnb-base": "13.1.0",
+        "eslint-config-prettier": "4.2.0",
+        "eslint-plugin-import": "2.17.2",
+        "eslint-plugin-prettier": "3.0.1",
+        "jest": "24.8.0",
+        "prettier": "1.17.0"
+    },
     "license": "MIT"
 }
