@@ -80,16 +80,24 @@ class BlipApiGenerator extends Generator {
 
         this.npmInstall(
             [
+                '@types/jest',
+                'coveralls',
                 'eslint',
+                'eslint-config-airbnb',
+                'eslint-config-airbnb-base',
                 'eslint-config-prettier',
+                'eslint-plugin-import',
                 'eslint-plugin-prettier',
-                'prettier'
+                'jest',
+                'prettier',
+                'superagent',
+                'supertest'
             ],
             { 'save-dev': true }
         );
 
         this.log();
-        this.log('...installing dependencies...');
+        this.log('...⌛  installing dependencies  📦...');
         this.log();
 
         this.npmInstall([

@@ -32,6 +32,12 @@ const BlipClientProvider = class {
         }
         return this.client;
     }
+
+    async stopClient() {
+        if (this.client) {
+            await this.client.close();
+        }
+    }
 };
 
 module.exports = BlipClientProvider;

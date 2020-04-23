@@ -1,8 +1,8 @@
 const { BAD_REQUEST } = require('http-status-codes');
 
 const BadRequestError = class extends Error {
-    constructor() {
-        super();
+    constructor(message) {
+        super(message);
         this.status = BAD_REQUEST;
     }
 };

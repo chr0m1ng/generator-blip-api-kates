@@ -144,8 +144,16 @@ const files = [
         destination: 'src/server.js'
     },
     {
-        template: 'test/test.js.template',
-        destination: 'test/test.js'
+        template: 'test/example.test.js.template',
+        destination: 'test/example.test.js'
+    },
+    {
+        template: 'test/health-check.test.js.template',
+        destination: 'test/health-check.test.js'
+    },
+    {
+        template: 'test/swagger.test.js.template',
+        destination: 'test/swagger.test.js'
     },
     {
         template: '.editorconfig.template',

@@ -10,6 +10,7 @@
         "camelcase": "off",
         "class-methods-use-this": "off",
         "radix": "off",
-        "consistent-return": "off"
+        "consistent-return": "off",
+        "no-underscore-dangle": "off"
     }
 }

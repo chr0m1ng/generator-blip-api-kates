@@ -24,7 +24,7 @@ const ETAG = 'etag';
 
 const App = class {
     constructor() {
-        this.server = express();
+        this.app = express();
     }
 
     async build() {
@@ -36,23 +36,23 @@ const App = class {
     }
 
     start() {
-        this.server.listen(PORT, () => {
+        this.app.listen(PORT, () => {
             this.logger.info(`server listening on port: ${PORT}`);
         });
     }
 
     setupPreRoutesMiddlewares() {
-        this.server.disable(ETAG);
-        this.server.use(express.json());
-        this.server.use(resBodyMiddleware);
-        this.server.use(requestLogger.unless(shouldNotLogPath));
-        this.server.use(responseLogger.unless(shouldNotLogPath));
-        this.server.use(validatorMiddleware);
+        this.app.disable(ETAG);
+        this.app.use(express.json());
+        this.app.use(resBodyMiddleware);
+        this.app.use(requestLogger.unless(shouldNotLogPath));
+        this.app.use(responseLogger.unless(shouldNotLogPath));
+        this.app.use(validatorMiddleware);
     }
 
     setupPosRoutesMiddlewares() {
         this.setupSwagger();
-        this.server.use(errorMiddleware);
+        this.app.use(errorMiddleware);
     }
 
     setupSwagger() {
@@ -68,7 +68,7 @@ const App = class {
             apis: [ROUTES_PATH]
         };
         const specs = swaggerJsDoc(options);
-        this.server.use(
+        this.app.use(
             config.api.swagger_path,
             swagger_ui.serve,
             swagger_ui.setup(specs)
@@ -76,7 +76,7 @@ const App = class {
     }
 
     setupRoutes() {
-        this.server.use(config.api.base_path, router);
+        this.app.use(config.api.base_path, router);
     }
 
     setupLogger() {
@@ -87,6 +87,10 @@ const App = class {
     async setupBlipClient() {
         this.blip_client_provider = new BlipClientProvider();
         await this.blip_client_provider.getClient();
+    }
+
+    async stopApp() {
+        await this.blip_client_provider.stopClient();
     }
 };
 

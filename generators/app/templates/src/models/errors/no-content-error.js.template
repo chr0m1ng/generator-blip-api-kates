@@ -1,8 +1,8 @@
 const { NO_CONTENT } = require('http-status-codes');
 
 const NoContentError = class extends Error {
-    constructor() {
-        super();
+    constructor(message) {
+        super(message);
         this.status = NO_CONTENT;
     }
 };
