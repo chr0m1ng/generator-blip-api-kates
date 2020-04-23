@@ -12,8 +12,11 @@
 
 ## File Structure
 
-```cs
- 📁blip-bot-project // assuming your folder is called blip-bot-project. Whatever name you choose will replace all occurrences of that string in the project
+Assuming your folder is called `blip-bot-project`.
+Whatever name you choose will replace all occurrences of that string in the project
+
+```js
+ 📁blip-bot-project
  |__📁charts
     |__📁blip-bot-project
     |   |__📁templates
@@ -67,16 +70,19 @@
     |   |__📃{example-validator.js}
     |__📃{app.js} // The app startup config
     |__📃{server.js}
-    |__⚙️.editorconfig
-    |__⚙️.eslintignore
-    |__⚙️.eslintrc.json
-    |__⚙️.gitattributes
-    |__⚙️.gitignore
-    |__⚙️.prettierrc
-    |__⚙️LICENSE
-    |__⚙️package.json
-    |__⚙️README.md
- |__📁test
+|__📁test // The tests
+|   |__📃{example.test.js}
+|   |__📃{health-check.test.js}
+|   |__📃{swagger.test.js}
+|__⚙️.editorconfig
+|__⚙️.eslintignore
+|__⚙️.eslintrc.json
+|__⚙️.gitattributes
+|__⚙️.gitignore
+|__⚙️.prettierrc
+|__⚙️LICENSE
+|__⚙️package.json
+|__⚙️README.md
 ```
 
 ## Installation
@@ -164,13 +170,13 @@ This generator was created based on original [oss generator](https://github.com/
 [npm-url]: https://www.npmjs.com/package/generator-blip-api-kates
 [npm-downloads-badge]: https://img.shields.io/npm/dt/generator-blip-api-kates.svg
 [npm-downloads-url]: https://www.npmjs.com/package/generator-blip-api-kates
-[travis-badge]: https://travis-ci.org/robertoachar/generator-blip-api-kates.svg?branch=master
-[travis-url]: https://travis-ci.org/robertoachar/generator-blip-api-kates
-[circleci-badge]: https://circleci.com/gh/robertoachar/generator-blip-api-kates/tree/master.svg?style=shield
-[circleci-url]: https://circleci.com/gh/robertoachar/generator-blip-api-kates
-[appveyor-badge]: https://ci.appveyor.com/api/projects/status/github/robertoachar/generator-blip-api-kates?branch=master&svg=true
-[appveyor-url]: https://ci.appveyor.com/project/robertoachar/generator-blip-api-kates
-[coveralls-badge]: https://coveralls.io/repos/github/robertoachar/generator-blip-api-kates/badge.svg?branch=master
-[coveralls-url]: https://coveralls.io/github/robertoachar/generator-blip-api-kates?branch=master
-[license-badge]: https://img.shields.io/github/license/robertoachar/generator-blip-api-kates.svg
+[travis-badge]: https://travis-ci.org/chr0m1ng/generator-blip-api-kates.svg?branch=master
+[travis-url]: https://travis-ci.org/chr0m1ng/generator-blip-api-kates
+[circleci-badge]: https://circleci.com/gh/chr0m1ng/generator-blip-api-kates/tree/master.svg?style=shield
+[circleci-url]: https://circleci.com/gh/chr0m1ng/generator-blip-api-kates
+[appveyor-badge]: https://ci.appveyor.com/api/projects/status/github/chr0m1ng/generator-blip-api-kates?branch=master&svg=true
+[appveyor-url]: https://ci.appveyor.com/project/chr0m1ng/generator-blip-api-kates
+[coveralls-badge]: https://coveralls.io/repos/github/chr0m1ng/generator-blip-api-kates/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/chr0m1ng/generator-blip-api-kates?branch=master
+[license-badge]: https://img.shields.io/github/license/chr0m1ng/generator-blip-api-kates.svg
 [license-url]: https://opensource.org/licenses/MIT
