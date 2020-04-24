@@ -11,6 +11,9 @@
         "class-methods-use-this": "off",
         "radix": "off",
         "consistent-return": "off",
-        "no-underscore-dangle": "off"
+        "no-underscore-dangle": "off",
+        "no-var": ["error"],
+        "semi": ["error", "always"],
+        "comma-dangle": ["error", "never"]
     }
 }
