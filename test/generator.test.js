@@ -20,7 +20,7 @@ describe('Generator Tests', () => {
     it('should create a project', (done) => {
         files.forEach((file) => {
             assert.file(
-                file.destination.replace('<%= project %>', prompts.project)
+                file.destination.replace(/<%= project %>/g, prompts.project)
             );
         });
 
