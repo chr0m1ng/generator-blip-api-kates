@@ -22,7 +22,7 @@ const DEFAULT_PORT = 3333;
 const PORT = process.env.PORT || DEFAULT_PORT;
 const ETAG = 'etag';
 
-const App = class {
+class App {
     constructor() {
         this.app = express();
     }
@@ -92,6 +92,6 @@ const App = class {
     async stopApp() {
         await this.blip_client_provider.stopClient();
     }
-};
+}
 
 module.exports = App;

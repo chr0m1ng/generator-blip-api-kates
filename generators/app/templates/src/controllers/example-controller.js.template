@@ -1,7 +1,7 @@
 const httpStatusCodes = require('http-status-codes');
 const example_facade = require('../facades/example-facade');
 
-const ExampleController = class {
+class ExampleController {
     getAll(_, res) {
         return res.send(example_facade.getAll());
     }
@@ -18,6 +18,6 @@ const ExampleController = class {
             .status(httpStatusCodes.CREATED)
             .send(example_facade.addExample(example));
     }
-};
+}
 
 module.exports = new ExampleController();

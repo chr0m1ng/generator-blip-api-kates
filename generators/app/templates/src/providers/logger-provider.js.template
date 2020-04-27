@@ -5,7 +5,7 @@ const { seq } = require('../config');
 
 let instance = null;
 
-const LoggerProvider = class {
+class LoggerProvider {
     constructor() {
         if (!instance) {
             instance = this;
@@ -40,6 +40,6 @@ const LoggerProvider = class {
         }
         return this.logger;
     }
-};
+}
 
 module.exports = LoggerProvider;

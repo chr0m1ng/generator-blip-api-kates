@@ -4,7 +4,7 @@ const { bot } = require('../config');
 
 let instance = null;
 
-const BlipClientProvider = class {
+class BlipClientProvider {
     constructor() {
         if (!instance) {
             instance = this;
@@ -38,6 +38,6 @@ const BlipClientProvider = class {
             await this.client.close();
         }
     }
-};
+}
 
 module.exports = BlipClientProvider;

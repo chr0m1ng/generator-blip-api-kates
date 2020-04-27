@@ -1,10 +1,10 @@
 const { NO_CONTENT } = require('http-status-codes');
 
-const NoContentError = class extends Error {
+class NoContentError extends Error {
     constructor(message) {
         super(message);
         this.status = NO_CONTENT;
     }
-};
+}
 
 module.exports = NoContentError;
