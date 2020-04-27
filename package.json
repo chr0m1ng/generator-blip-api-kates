@@ -1,8 +1,8 @@
 {
     "name": "generator-blip-api-kates",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Yeoman generator for BLiP apis projects with helm and kubernetes.",
-    "author": "Gabriel Rodrigues dos Santos <gabrielr@take.com>",
+    "author": "Gabriel Rodrigues dos Santos <gabrielrsantoss@icloud.com>",
     "contributors": [],
     "homepage": "https://github.com/chr0m1ng/generator-blip-api-kates#readme",
     "keywords": [
