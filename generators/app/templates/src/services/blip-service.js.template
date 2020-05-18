@@ -1,5 +1,5 @@
 const { v4 } = require('uuid');
-const { GET } = require('../constants/blip/command-methods');
+const { CommandMethod } = require('lime-js');
 const BlipClientProvider = require('../providers/blip-provider');
 
 const PING_URI = '/ping';
@@ -9,7 +9,7 @@ const ping = async () => {
     const bot_client = await CLIENT_PROVIDER.getClient();
     const ping_command = {
         id: v4(),
-        method: GET,
+        method: CommandMethod.get,
         uri: PING_URI
     };
     return bot_client.sendCommand(ping_command);

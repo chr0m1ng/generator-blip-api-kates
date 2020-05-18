@@ -48,10 +48,6 @@ const files = [
         destination: 'src/config/index.js'
     },
     {
-        template: 'src/constants/blip/command-methods.js.template',
-        destination: 'src/constants/blip/command-methods.js'
-    },
-    {
         template: 'src/controllers/example-controller.js.template',
         destination: 'src/controllers/example-controller.js'
     },

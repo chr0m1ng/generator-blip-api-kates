@@ -33,10 +33,6 @@ Whatever name you choose will replace all occurrences of that string in the proj
     |__📁config // The app config
     |   |__📃{default.json}
     |   |__📃{index.js}
-    |__📁constants // The global constants
-    |   |   |__📁constants
-    |   |   |   |__📁blip
-    |   |   |   |   |__📃{command-methods.js}
     |   |   |__📃{...}
     |__📁controllers // The controllers
     |   |__📃{example-controller.js}
@@ -128,7 +124,7 @@ $ yo blip-api-kates
 -   Running project
 
 | Action                                   | Usage               |
-| ---------------------------------------- | ------------------- |
+|------------------------------------------|---------------------|
 | Starting development mode                | `npm start`         |
 | Linting code                             | `npm run lint`      |
 | Running unit tests                       | `npm run jest`      |

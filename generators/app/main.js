@@ -108,6 +108,7 @@ class BlipApiGenerator extends Generator {
             'express-mung',
             'express-unless',
             'http-status-codes',
+            'lime-js',
             'lime-transport-websocket',
             'swagger-jsdoc',
             'swagger-ui-express',
