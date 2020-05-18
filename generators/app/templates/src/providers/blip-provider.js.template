@@ -1,4 +1,4 @@
-const Websocket_transport = require('lime-transport-websocket');
+const WebsocketTransport = require('lime-transport-websocket');
 const blip_sdk = require('blip-sdk');
 const { bot } = require('../config');
 
@@ -18,7 +18,7 @@ class BlipClientProvider {
             .withAccessKey(bot.access_key)
             .withRoutingRule('instance')
             .withInstance(bot.identifier)
-            .withTransportFactory(() => new Websocket_transport())
+            .withTransportFactory(() => new WebsocketTransport())
             .build();
         await client.connect();
 
