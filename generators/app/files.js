@@ -186,6 +186,10 @@ const files = [
     {
         template: 'README.md.template',
         destination: 'README.md'
+    },
+    {
+        template: 'Dockerfile.template',
+        destination: 'Dockerfile'
     }
 ];
 
