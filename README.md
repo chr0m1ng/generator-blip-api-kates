@@ -79,6 +79,7 @@ Whatever name you choose will replace all occurrences of that string in the proj
 |__⚙️LICENSE
 |__⚙️package.json
 |__⚙️README.md
+|__🐋Dockerfile
 ```
 
 ## Usage
