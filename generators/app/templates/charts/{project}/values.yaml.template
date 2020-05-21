@@ -44,8 +44,8 @@ environment:
 
 appSettings:
     configMap: <%= project %>
-    path: /app/appsettings.json
-    subPath: appsettings.json
+    path: /app/src/config/default.json
+    subPath: default.json
 
 autoscale:
     minReplicas: minReplicas
