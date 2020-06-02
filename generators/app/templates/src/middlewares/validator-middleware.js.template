@@ -24,8 +24,10 @@ const validateReqBody = (req, _, next) => {
     const validator = getValidator(req.path, req.method);
     if (validator !== null) {
         Object.entries(validator).forEach(([location, schema]) => {
-            if (!schema.isValidSync(req[location])) {
-                return next(new BadRequestError());
+            try {
+                schema.validateSync(req[location]);
+            } catch (error) {
+                return next(new BadRequestError(error.message));
             }
         });
     }
