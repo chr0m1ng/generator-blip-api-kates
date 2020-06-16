@@ -88,8 +88,6 @@ Whatever name you choose will replace all occurrences of that string in the proj
 
 ```bash
 # Create a directory for your project && Change into directory
-$ take my-api-name
-# Or
 $ mkdir my-api-name && cd my-api-name
 
 # Generate a project
