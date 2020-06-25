@@ -166,7 +166,7 @@ $ yo blip-api-kates
 
 -   [Gabriel Santos](https://twitter.com/alitalvez)
 
-This generator was created based on original [oss generator](https://github.com/robertoachar/generator-blip-api-kates) created by [Roberto Achar](https://twitter.com/robertoachar) .
+This generator was created based on original [oss generator](https://github.com/robertoachar/generator-oss-project) created by [Roberto Achar](https://twitter.com/robertoachar) .
 
 ## License
 
