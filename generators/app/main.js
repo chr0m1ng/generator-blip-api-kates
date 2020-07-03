@@ -105,6 +105,7 @@ class BlipApiGenerator extends Generator {
             'bunyan',
             'bunyan-seq',
             'express',
+            'express-async-errors',
             'express-mung',
             'express-unless',
             'http-status-codes',

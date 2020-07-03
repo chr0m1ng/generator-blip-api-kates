@@ -2,6 +2,7 @@
 const swagger_ui = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
 const express = require('express');
+require('express-async-errors');
 
 const package_info = require('../package.json');
 const config = require('./config');

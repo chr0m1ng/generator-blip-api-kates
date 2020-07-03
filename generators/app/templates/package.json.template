@@ -24,6 +24,7 @@
         "bunyan-seq": "^0.4.0",
         "express": "^4.17.1",
         "express-mung": "^0.5.1",
+        "express-async-errors": "^3.1.1",
         "express-unless": "^0.5.0",
         "http-status-codes": "^1.4.0",
         "lime-js": "^3.0.1",
