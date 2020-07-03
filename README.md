@@ -88,8 +88,6 @@ Whatever name you choose will replace all occurrences of that string in the proj
 
 ```bash
 # Create a directory for your project && Change into directory
-$ take my-api-name
-# Or
 $ mkdir my-api-name && cd my-api-name
 
 # Generate a project
@@ -168,7 +166,7 @@ $ yo blip-api-kates
 
 -   [Gabriel Santos](https://twitter.com/alitalvez)
 
-This generator was created based on original [oss generator](https://github.com/robertoachar/generator-blip-api-kates) created by [Roberto Achar](https://twitter.com/robertoachar) .
+This generator was created based on original [oss generator](https://github.com/robertoachar/generator-oss-project) created by [Roberto Achar](https://twitter.com/robertoachar) .
 
 ## License
 

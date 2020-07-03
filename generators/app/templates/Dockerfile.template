@@ -8,9 +8,9 @@ RUN [ "mkdir", "/app"]
 
 WORKDIR /app
 
-COPY package.json .
+COPY package*.json .
 
-RUN yarn
+RUN npm install
 
 COPY . .
 
@@ -18,6 +18,6 @@ ENV PORT=80
 
 EXPOSE 80
 
-ENTRYPOINT [ "yarn" ]
+ENTRYPOINT [ "npm" ]
 
 CMD ["start"]
