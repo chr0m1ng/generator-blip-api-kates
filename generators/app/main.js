@@ -26,7 +26,7 @@ class BlipApiGenerator extends Generator {
                 type: 'input',
                 name: 'description',
                 message: 'What is the description of your project?',
-                default: 'An BLiP bot api project'
+                default: 'A BLiP bot api project'
             },
             {
                 type: 'input',
