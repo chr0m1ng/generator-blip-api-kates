@@ -9,7 +9,7 @@ const ping = async () => {
     const bot_client = await CLIENT_PROVIDER.getClient();
     const ping_command = {
         id: v4(),
-        method: CommandMethod.get,
+        method: CommandMethod.GET,
         uri: PING_URI
     };
     return bot_client.sendCommand(ping_command);
