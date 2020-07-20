@@ -1,9 +1,10 @@
 class Route {
-    constructor(path, method, controller, validator = null) {
+    constructor(path, method, controller, validator = null, middlewares = null) {
         this.path = path;
         this.method = method.toLowerCase();
         this.controller = controller;
         this.validator = validator;
+        this.middlewares = middlewares;
     }
 }
 
