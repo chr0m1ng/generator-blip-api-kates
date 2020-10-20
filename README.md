@@ -180,8 +180,8 @@ This generator was created based on original [oss generator](https://github.com/
 [travis-url]: https://travis-ci.org/chr0m1ng/generator-blip-api-kates
 [circleci-badge]: https://circleci.com/gh/chr0m1ng/generator-blip-api-kates/tree/master.svg?style=shield
 [circleci-url]: https://circleci.com/gh/chr0m1ng/generator-blip-api-kates
-[appveyor-badge]: https://ci.appveyor.com/api/projects/status/github/chr0m1ng/generator-blip-api-kates?branch=master&svg=true
-[appveyor-url]: https://ci.appveyor.com/project/chr0m1ng/generator-blip-api-kates
+[appveyor-badge]: https://ci.appveyor.com/api/projects/status/ldwffqs15li0prqx/branch/master?svg=true
+[appveyor-url]: https://ci.appveyor.com/project/chr0m1ng/generator-blip-api-kates/branch/master
 [coveralls-badge]: https://coveralls.io/repos/github/chr0m1ng/generator-blip-api-kates/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/github/chr0m1ng/generator-blip-api-kates?branch=master
 [license-badge]: https://img.shields.io/github/license/chr0m1ng/generator-blip-api-kates.svg
