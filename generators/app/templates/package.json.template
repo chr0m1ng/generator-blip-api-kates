@@ -18,6 +18,11 @@
         "start": "node src/server.js",
         "test": "npm run lint && npm run jest"
     },
+    "jest": {
+        "testResultsProcessor": "jest-sonar-reporter",
+        "collectCoverage": true,
+        "testTimeout": 10000
+    },
     "dependencies": {
         "blip-sdk": "^8.0.0",
         "bunyan": "^1.8.12",
@@ -44,6 +49,7 @@
         "eslint-plugin-import": "^2.17.2",
         "eslint-plugin-prettier": "^3.0.1",
         "jest": "^24.9.0",
+        "jest-sonar-reporter": "^2.0.0",
         "prettier": "^1.17.0",
         "superagent": "^5.2.2",
         "supertest": "^4.0.2"

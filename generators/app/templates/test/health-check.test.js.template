@@ -8,7 +8,7 @@ const HEALTH_CHECK_PATH = `${config.api.base_path}/healthcheck`;
 const server = new App();
 let express_app = null;
 
-describe('Test the helth check', () => {
+describe('Test the health check', () => {
     beforeAll(async (done) => {
         await server.build();
         express_app = server.app;
