@@ -24,9 +24,9 @@
         "generators"
     ],
     "scripts": {
-        "coverage": "jest --colors --coverage",
+        "coverage": "npx jest --colors --coverage",
         "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
-        "jest": "jest --colors --verbose",
+        "jest": "npx jest --colors --verbose",
         "lint": "eslint generators/**/*.js test/**/*.js",
         "test": "npm run lint && npm run jest"
     },
