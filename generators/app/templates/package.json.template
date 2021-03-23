@@ -11,10 +11,10 @@
         "src"
     ],
     "scripts": {
-        "coverage": "jest --colors --coverage",
-        "jest": "jest --colors --verbose",
+        "coverage": "npx jest --colors --coverage",
+        "jest": "npx jest --colors --verbose",
         "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
-        "lint": "eslint 'src/**/*.js' 'test/**/*.js'",
+        "lint": "npx eslint 'src/**/*.js' 'test/**/*.js'",
         "start": "node src/server.js",
         "test": "npm run lint && npm run jest"
     },
